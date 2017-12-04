@@ -1,0 +1,50 @@
+.member-activity-board {
+  font-weight: 600;
+  color: #d1d2d3;
+
+  table {
+    border: 1px solid #0c0c0c;
+    border-top: none;
+    border-bottom: none;
+
+    th, td {
+      background-color: #0c0c0c;
+      width: 50px;
+      &.name-column {
+        text-align: left;
+        padding: 20px;
+        width: 250px;
+      }
+    }
+    th {
+      color: #0c0c0c;
+      background-color: #fff!important;
+      height: 250px;
+      position: relative;
+      padding: 1px;
+      span {
+        transform-origin: 0 50%;
+        transform: rotate(-90deg);
+        white-space: nowrap;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+      }
+    }
+    td {
+      text-align: center;
+      button {
+        border: 0px;
+        background-color: #0c0c0c;
+        font-size: 40px;
+      }
+    }
+    tr:hover td {
+      background-color: #000!important;
+      button {
+        background-color: #000!important;
+      }
+    }
+  }
+}

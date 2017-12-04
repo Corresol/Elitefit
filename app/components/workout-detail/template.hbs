@@ -1,0 +1,106 @@
+<div class="header" style="{{backgroundImage}}">
+  <div class="content">
+    <div class="title">
+      {{activity.name}}
+    </div>
+    <div class="sub-title">
+      Level {{activity.definition.level_number}}
+    </div>
+
+    <div class="activity-numbers">
+      <div class="item">
+        <div class="value">{{activity.definition.duration}}</div>
+        <div class="label">Minuten</div>
+      </div>
+      <div class="item">
+        <div class="value">{{activity.definition.level_number}}</div>
+        <div class="label">Niveau</div>
+      </div>
+      <div class="item">
+        <div class="value">{{activity.definition.intensity}}</div>
+        <div class="label">Intensiteit</div>
+      </div>
+    </div>
+    <div class="graphs">
+      {{eft-graph title="strength" progress=activity.definition.strength}}
+      {{eft-graph title="conditioning" progress=activity.definition.conditioning}}
+    </div>
+    <div class="cta">
+      {{reservation-button activity=activity class='reservation-button'}}
+    </div>
+  </div>
+</div>
+<div class="body">
+  <div class="capacity-block">
+    <div class="max-capacity">
+      {{maxCapacity}} <small>beschikbaar</small>
+    </div>
+    <div class="reservation-count">
+      {{reservations}} <small>gereserveerd</small>
+    </div>
+  </div>
+  <div class="perfect-for">
+    <div class="title">
+      Perfect voor
+    </div>
+    <div class="content">
+      {{activity.definition.goal_description}}
+    </div>
+  </div>
+  <div class="coach">
+    <div class="avatar">
+      <img src="{{if activity.definition.coach.profile_picture activity.definition.coach.profile_picture "default.jpg"}}" class="img-circle" alt="User Image">
+    </div>
+    <div class="details">
+      <div class="title">Personal coach</div>
+      <div class="name">{{activity.definition.coach.name}}</div>
+    </div>
+
+
+  </div>
+  <div class="c-divider" >
+    <h3 class="c-divider__title">aangemeld voor deze les</h3>
+  </div>
+  <div class="reservations">
+    {{#each activity.reservations as |reservation|}}
+    <div class="reservation">
+      <div class="avatar">
+        <img src="{{if reservation.profile_picture reservation.profile_picture "default.jpg"}}" class="img-circle" alt="User Image">
+      </div>
+      <div class="name">
+        {{reservation.username}}
+        <div class="tag-line">{{reservation.user_tagline}}</div>
+      </div>
+    </div>
+    {{else}}
+
+    <div class="reservation">
+      <div class="name">
+        Geen reserveringen
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="c-divider" >
+    <h3 class="c-divider__title">wachtend voor deze les</h3>
+  </div>
+  <div class="reservations">
+    {{#each activity.waitings as |reservation|}}
+    <div class="reservation">
+      <div class="avatar">
+        <img src="{{if reservation.profile_picture reservation.profile_picture "default.jpg"}}" class="img-circle" alt="User Image">
+      </div>
+      <div class="name">
+        {{reservation.username}}
+        <div class="tag-line">{{reservation.user_tagline}}</div>
+      </div>
+    </div>
+    {{else}}
+    <div class="reservation">
+      <div class="name">
+        Geen wachtenden
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

@@ -1,0 +1,36 @@
+& {
+  z-index: 100000;
+  background: url(../assets/loading-background.png) no-repeat 0 top;
+  background-size: cover;
+  text-align: center;
+  .label-loading {
+    font-family: robotoLight;
+    font-size: 1.1em;
+    padding: 8px;
+  }
+  .loader {
+    display: inline-block;
+    background-color: transparent;
+    margin: 10.2em 0 auto 0;
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid transparent; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+  }
+
+  .ef-logo {
+    margin-top: 13em;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}

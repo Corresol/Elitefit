@@ -1,0 +1,84 @@
+& {
+  &.is-invalid {
+    .label {
+      color: #d1d1d1;
+    }
+  }
+  i {
+    margin: {
+      left: 3px;
+      right: 3px;
+      cursor: 'pointer';
+    }
+  }
+  .label {
+    padding-top: 0.6em;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 1.2em;
+    font-family: robotoLight;
+  }
+  .pointer-confirm {
+    padding-top: 0.6em;
+    padding-right: 0.4em;
+    margin-left: -45px;
+    float: right;
+    font-size: 2em;
+    color: green;
+  }
+  .section {
+    .header {
+      font-size: 1.3em;
+      font-family: bebasNeue;
+      color: #8a8b8c;
+    }
+    .value {
+      font-size: 1.5em;
+    }
+    padding: 1em;
+    text-align: left;
+    .pointer {
+      float: right;
+      font-size: 1.5em;
+    }
+    border-bottom: 1px solid #d1d1d1;
+    padding: 1.5em;
+
+  }
+  .pointer {
+    padding: 0.5em;
+    font-size: 2em;
+  }
+  width: 100%;
+  padding: 0;
+  .slidee {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style: none;
+    li {
+      color: grey;
+      font-size: 1.8em;
+      padding-top: 0.5em;
+      &.active {
+        padding-top: 0;
+        color: black;
+        font-size: 2.8em;
+        cursor: pointer;
+        input {
+          width: 90px;
+          font-family: bebasNeueBold;
+          padding-top: 0;
+          color: orange;
+          font-size: 1em;
+        }
+      }
+      float: left;
+      width: 95px;
+      vertical-align: text-bottom;
+      height: 2em;
+    }
+  }
+}
+

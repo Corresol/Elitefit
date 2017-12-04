@@ -1,0 +1,49 @@
+{{#box-widget class="primary" title="Measurement details" as |box|}}
+  {{#form-for measurement as |f|}}
+    <div class='col-md-4'>
+      {{f.date-field "measuredAt" label="Measured at"}}
+      {{f.number-field "weightKg"}}
+      {{f.number-field "chest"}}
+      {{f.number-field "triceps"}}
+    </div>
+    <div class='col-md-4'>
+      {{f.number-field "subscapular"}}
+      {{f.number-field "midAx"}}
+      {{f.number-field "supralliac"}}
+    </div>
+    <div class='col-md-4'>
+      {{f.number-field "umbilical"}}
+      {{f.number-field "quadriceps"}}
+      {{f.number-field "hamstring"}}
+    </div>
+  {{/form-for}}
+  {{#box.footer}}
+    <button class="btn btn-default pull-left" {{action "cancel"}}>Cancel</button>
+    <button class="btn btn-info pull-right" {{action "save"}}>Save</button>
+  {{/box.footer}}
+{{/box-widget}}
+
+{{#box-widget class="warning" title="Measurement Overview" as |box|}}
+  <ul class="nav nav-stacked">
+    <li>
+      <strong>Bone density</strong>
+      <br>{{ measurement.boneDensity }}
+      <br>{{ measurement.boneDensity2 }}
+    </li>
+    <li>
+      <strong>Fat %</strong>
+      <br>{{ measurement.fatPercentage }}
+    </li>
+    <li>
+      <strong>Fatmass</strong>
+      <br>{{ measurement.fatMass }}
+    </li>
+    <li>
+      <strong>Leanmass %</strong>
+      <br>{{ measurement.leanMass }}
+    </li>
+    <li>
+      <strong>Total:</strong> {{ measurement.total }}
+    </li>
+  </ul>
+{{/box-widget}}

@@ -1,0 +1,15 @@
+{{#ember-wormhole to="app-header"}}
+  {{#app-header goBack="member.reservations"}}
+    <div class="multi">
+      <div class="main">
+        {{model.activity.weekDay}} | {{model.activity.time}}
+      </div>
+      <div class="sub">
+        {{model.activity.definition.level_description}}
+      </div>
+    </div>
+  {{/app-header}}
+{{/ember-wormhole}}
+
+{{workout-detail activity=model.activity}}
+

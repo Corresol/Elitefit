@@ -1,0 +1,45 @@
+<div class="registration row">
+  <center>
+    <div class='row'>
+      <div class='col-md-12'>
+        {{ef-logo}}
+        {{#if (eq recoveryAction 'recovering')}}
+          <div class="alert alert-danger">
+            Bedankt, wanneer u in ons systeem bekend bent krijgt u een e-mail met daarin instructies uw wachtwoord te kunnen herstellen.
+          </div>
+          {{#link-to "login" class="link"}}Inloggen{{/link-to}}
+        {{/if}}
+        {{error-display errorMessage=errorMessage}}
+        {{#if (eq recoveryAction 'recover')}}
+        <form {{action 'recover' on='submit'}}>
+
+          <div class="form-group">
+            {{ef-input value=identification placeholder='Gebruikersnaam, email of lid-nummer' class='form-control'}}
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="form-control c-btn c-btn--primary">Account herstellen</button>
+          </div>
+          {{#link-to "login" class="link"}}Inloggen{{/link-to}}
+        </form>
+        {{/if}}
+        {{#if (eq recoveryAction 'changePassword')}}
+        <form {{action 'updatePassword' on='submit'}}>
+          <div class="form-group">
+            {{ef-input value=newPassword placeholder='Kies een wachtwoord' class='form-control'}}
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="form-control c-btn c-btn--primary">Wachtwoord bijwerken</button>
+          </div>
+          <div class="alert alert-danger">
+            Let op: Je gebruikersnaam is vermeld in de uitnodigings email. En kan na inloggen naar wens worden bepaald.
+          </div>
+          <br>
+          {{#link-to "login" class="link"}}Inloggen{{/link-to}}
+        </form>
+        {{/if}}
+      </div>
+    </div>
+  </center>
+</div>

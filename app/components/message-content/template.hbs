@@ -1,0 +1,13 @@
+<div class="direct-chat-info clearfix">
+  {{#unless previousMessageFromSameUser}}
+  <span class="direct-chat-name {{if isCurrentUser 'pull-right' 'pull-left' }}">{{message.user.username}}</span>
+  <span class="direct-chat-timestamp {{if isCurrentUser 'pull-left' 'pull-right' }}">{{moment-format message.date 'll hh:mm'}}</span>
+  {{/unless}}
+</div>
+
+<img class="direct-chat-img" src="{{if message.user.profile_picture message.user.profile_picture "default.jpg"}}" alt="message user image">
+<!-- /.direct-chat-info -->
+<div class="direct-chat-text">
+  {{message.content}}
+</div>
+<!-- /.direct-chat-text -->

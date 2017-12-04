@@ -1,0 +1,26 @@
+<div class="c-reservation-box">
+  <div class="c-reservation-box__image" style="{{backgroundImage}}">
+    <div class="c-reservation-box__available">
+      {{#if activity.full}}
+        <span class="reserved">
+          VOL
+        </span>
+      {{else}}
+        <span class="reserved">
+          {{activity.reservations.length}} /
+        </span>
+        <span class="available">
+          {{activity.max_capacity}}
+        </span>
+      {{/if}}
+    </div>
+    <div class="c-reservation-box__textblock">
+      <div class="c-reservation-box__title">{{activity.time}}</div>
+      <div class="c-reservation-box__sub_title">{{activity.name}}</div>
+      <div class="c-reservation-box__level">Level {{activity.definition.level_number}}</div>
+    </div>
+    <div class="cta">
+      {{reservation-button activity=activity channel=channel setCurrentDay=setCurrentDay day=day inList=true}}
+    </div>
+  </div>
+</div>

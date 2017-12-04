@@ -1,0 +1,52 @@
+{{#if isFinished}}
+  {{#ember-wormhole to="app-header"}}
+  {{#app-header}}DEZE WEEK{{/app-header}}
+  {{/ember-wormhole}}
+  {{#ember-wormhole to="app-sub-header"}}
+  <div class="c-sub-header {{if cdv.isIOS 'ios-status-bar'}}">
+      <h3 class="c-sub-header__title">
+        <div  class="c-sub-header__action">
+          <a hreft="javascript:void(0)" class="{{if filtersService.enabled 'active'}}" {{action "enableFilter"}}>FILTER</a>
+          {{#if (gt filtersService.filtersCount 0)}}
+          ({{filtersService.filtersCount}})
+          {{/if}}
+        </div>
+        <div class="c-sub-header__divider">
+        </div>
+        <div class="c-sub-header__action">
+          <a hreft="javascript:void(0)" class="{{if showReservations 'active'}}" {{action "reservations"}}>Reserveringen ({{reservations.length}})</a>
+        </div>
+      </h3>
+    </div>
+  {{/ember-wormhole}}
+  {{else}}
+{{/if}}
+{{#unless showFilter}}
+<div class="-overview detached">
+  {{#each-in activitiesByWeekdays as |day activities|}}
+  {{#if isFinished}}
+    {{#ember-wormhole to="app-sub-sub-header"}}
+      <div class="c-divider detachable {{if cdv.isIOS 'ios-status-bar'}} {{if detached 'detached'}}" id="{{moment-format day 'dddd'}}">
+        <h3 class="c-divider__title">{{moment-format day 'dddd DD/MM' locale='nl'}}</h3>
+      </div>
+    {{/ember-wormhole}}
+    <div class="c-divider" id="{{moment-format day 'dddd'}}">
+      <h3 class="c-divider__title">{{moment-format day 'dddd DD/MM' locale='nl'}}</h3>
+    </div>
+  {{/if}}
+  {{#if showReservations}}
+  <div class="row">
+    {{#each activities as |activity|}}
+      {{activity-overview activity=activity channel=channel setCurrentDay=(action 'setCurrentDay')}}
+    {{/each}}
+  </div>
+  {{else}}
+  <div class="row">
+    {{#each activities as |activity|}}
+      {{activity-overview activity=activity channel=channel day=(moment-format activity.date 'dddd') setCurrentDay=(action 'setCurrentDay')}}
+    {{/each}}
+  </div>
+  {{/if}}
+{{/each-in}}
+</div>
+{{/unless}}

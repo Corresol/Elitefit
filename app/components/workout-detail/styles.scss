@@ -1,0 +1,194 @@
+& {
+  .header {
+    height: 520px;
+    width: 100%;
+    text-align: center;
+    .content {
+      .cta {
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+      }
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      margin-top: 105px;
+      .activity-numbers {
+        margin: 36px 26px;
+        display: flex;
+        .item {
+          margin: 0 24px;
+          flex: 0.3;
+          .label {
+            font-family: robotoLight;
+            font-size: 12px;
+          }
+          .value {
+            font-size: 24px;
+            height: 29px;
+          }
+        }
+      }
+      .graphs {
+        margin: 0 45px;
+        display: flex;
+        .graph {
+          flex: 0.5;
+        }
+      }
+      position: absolute;
+      .title {
+        line-height: 38px;
+        font-size: 40px;
+        white-space: nowrap;
+        margin-top: 2px;
+
+      }
+      .sub-title {
+        line-height: 38px;
+        margin-top: 7px;
+        font-size: 32px;
+        font-family: bebasNeue;
+
+      }
+  }
+    .reservation-button {
+      width: 100%;
+      text-align: center;
+      button {
+      margin-top: 47px;
+        display: inline;
+      }
+    }
+  }
+  .body {
+    background: #fff;
+    color: rgb(33, 33, 33);
+    line-height: 1.2;
+    font-size: 4em;
+
+    .capacity-block {
+      border-bottom: 1px solid #f0f0f0;
+      display: -webkit-flex;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -webkit-justify-content: center;
+      justify-content: center;
+      height: 68px;
+      .reservations {
+        margin-left: 20px;
+      }
+      .max-capacity, .reservation-count {
+        min-width: 112px;
+        max-width: 112px;
+        height: 48px;
+        padding: 10px;
+        font-size: 40px;
+        flex: 0.5;
+        small {
+          font-size: 16px;
+          vertical-align: middle;
+          font-size: .4em;
+        }
+      }
+    }
+
+    .perfect-for {
+      border-bottom: 1px solid #f0f0f0;
+      padding: 20px;
+      text-align: center;
+      .title {
+        line-height: 20px;
+        font-size: 20px;
+      }
+      .content {
+        line-height: 1.29;
+        font-size: 14px;
+        font-family: roboto;
+      }
+    }
+
+    .coach {
+      display: flex;
+      display: -webkit-flex;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -webkit-justify-content: center;
+      justify-content: center;
+      padding: 10px 10px 10px 20px;
+
+      .avatar {
+        flex: 1;
+        padding: 10px;
+        img {
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .details {
+        flex: 1;
+        padding: 0 60px 17px 10px;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        justify-content: center;
+        .title {
+          font-size: 18px;
+        }
+        .name {
+          font-family: robotoLight;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .c-divider {
+      height: 48px;
+      padding: 0;
+      margin: 0;
+      .c-divider__title {
+        padding: 17px;
+        height: 19px;
+        font-size: 16px;
+      }
+    }
+
+    .reservations {
+      display: flex;
+      display: -webkit-flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      .reservation {
+        flex: 1;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        height: 76px;
+        border-bottom: 1px solid #f0f0f0;
+        .avatar {
+          padding: 10px;
+          img {
+            border-radius: 50%;
+            height: 54px;
+            width: 54px;
+          }
+        }
+        .name {
+          padding: 18px 5px;
+          font-size: 18px;
+          .tag-line {
+            font-family: robotoLight;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

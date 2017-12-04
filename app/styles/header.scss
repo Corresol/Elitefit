@@ -1,0 +1,80 @@
+@media screen and (min-width: 680px) {
+  .main-header {
+    background-image: url(/menu-logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60px;
+  }
+}
+@media screen and (max-width: 679px) {
+  .main-header {
+    background-image: url(/menu-logo.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 60px;
+  }
+}
+
+.app-header {
+  img {
+    margin-top: -12px;
+  }
+  font-size: 1.5em;
+  max-height: 1.0em;
+
+  padding-top: 0.8em;
+  padding-bottom: 0.7em;
+
+  background-color: #0c0c0c;
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid #202125;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  .fa {
+    font-size: 0.7em;
+    color: #fff;
+  }
+  .actions {
+    &.left {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      a {
+        font-size: 1.7em;
+        padding: 0.2em;
+      }
+    }
+    &.right {
+      position: absolute;
+      top: 5px;
+      right: 15px;
+      a {
+        font-size: 1.7em;
+        padding: 0.2em;
+      }
+    }
+  }
+}
+
+.main-header {
+  background-color: #0c0c0c;
+  border-bottom: 2px solid #202125;
+  margin-bottom: 20px;
+  .navbar {
+    .nav {
+      font-size: 1em;
+
+      a {
+        cursor: pointer;
+      }
+      span {
+        color: #fff;
+
+        padding: 1em;
+        display: inline-block;
+      }
+    }
+  }
+}

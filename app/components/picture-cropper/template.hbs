@@ -1,0 +1,32 @@
+{{#ember-wormhole to="app-header"}}
+  {{#app-header}}
+    <div class="actions right">
+      <a href="javascript:void(0)" {{action 'cancel'}}>{{fa-icon 'close'}}</a>
+      <a href="javascript:void(0)" {{action 'getCroppedAvatar'}}>{{fa-icon 'check'}}</a>
+    </div>
+    Upload image
+  {{/app-header}}
+{{/ember-wormhole}}
+{{#if isLoading}}
+  <div class='loader'></div>
+{{else}}
+<div class='row'>
+  <div class="cropper">
+    <div class="cropper-container">
+      <img src={{currentUser.tmpPicture}}>
+    </div>
+    <div class="preview hidden">
+      <div class="img-preview"></div>
+      Preview
+    </div>
+    <div class="cropped hidden">
+      <div class="cropped-avatar">
+        {{croppedAvatar}}
+      </div>
+      Cropped Avatar
+    </div>
+  </div>
+</div>
+{{/if}}
+
+

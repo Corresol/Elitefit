@@ -1,0 +1,117 @@
+/* @TODO: extract vars to global vars */
+
+$color-btn:                             #f6f6f6;
+$color-btn-background:                  #2c82be;
+$color-btn-background-hover:            lighten(#5a5c61, 10%);
+
+$color-btn-secondary:                   #5a5c61;
+$color-btn-secondary-background:        #f6f6f6;
+$color-btn-secondary-background-hover:  darken(#fff, 5%);
+
+$color-btn-alt:                         #fff;
+$color-btn-alt-background:              transparent;
+$color-btn-alt-background-hover:        transparent;
+
+/*
+* 1. Allow us to style box model properties.
+* 2. Line different sized buttons up a little nicer.
+* 3. Make buttons inherit font styles (often necessary when styling `input`s as
+*    buttons).
+* 4. Reset/normalize some styles.
+* 5. Force all button-styled elements to appear clickable.
+* 6. Subtract the border size from the padding value so that buttons do not
+*    grow larger as we add borders.
+*/
+.c-btn {
+  display: block; /* [1] */
+  vertical-align: middle; /* [2] */
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  margin: 0; /* [4] */
+  cursor: pointer; /* [5] */
+  padding: $global-spacing-unit-small $global-spacing-unit-small;
+  border-width: 1px solid;
+  border-style: solid;
+  font-size: 1.4em;
+  min-width: 143.5px;
+  margin-top: 0.8em;
+  margin-bottom: 0.7em;
+}
+
+.c-btn--empty {
+  display: block; /* [1] */
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  margin: 0; /* [4] */
+  padding: $global-spacing-unit-small $global-spacing-unit-small;
+  min-width: 143.5px;
+  margin-top: 0.8em;
+  margin-bottom: 0.7em;
+}
+
+.c-list--btn {
+  vertical-align: middle; /* [2] */
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  margin: 0; /* [4] */
+  cursor: pointer; /* [5] */
+  border-width: 1px solid;
+  border-style: solid;
+  font-size: 1.4em;
+  height: 35px;
+  margin-right: 9px;
+  margin-top: 21px;
+  padding: 6px 16px;
+
+  &.info {
+    max-width: 90px;
+  }
+
+  &.reserveren {
+    max-width: 120px;
+  }
+
+}
+
+.c-btn--primary {
+  background-color: $color-btn-background;
+  border-color: $color-btn-background;
+  color: $color-btn;
+
+  @include hocus() {
+    background: $color-btn-background-hover;
+    border-color: $color-btn-background-hover;
+  }
+}
+
+.c-btn--secondary {
+  background-color: $color-btn-secondary-background;
+  border-color: $color-btn-secondary-background;
+  color: $color-btn-secondary;
+
+  @include hocus() {
+    background: $color-btn-secondary-background-hover;
+  }
+}
+
+.c-btn--alt {
+  background-color: $color-btn-alt-background;
+  border-color: $color-btn-alt;
+  border-width: 1px;
+  color: $color-btn-alt;
+
+  @include hocus() {
+    background: $color-btn-secondary-background-hover;
+  }
+}
+
+.c-btn--large {
+  padding: {
+    left: $global-spacing-unit-large;
+    right: $global-spacing-unit-large;
+  }
+}
+
+.c-btn--full {
+  width: 253px;
+}

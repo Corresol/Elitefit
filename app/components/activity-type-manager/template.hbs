@@ -1,0 +1,37 @@
+
+
+{{#box-widget class="warning" title="Activity Types" as |box|}}
+
+{{#if hasNewActivityType}}
+  {{activity-type-form activityType=newActivityType activities=activities cancel=(action 'cancel')}}
+  {{else}}
+  <button class='btn' onClick={{action 'addNew'}}>Create</button>
+{{/if}}
+
+{{#if hasCurrentActivityType}}
+  {{activity-type-form activityType=currentActivityType activities=activities cancel=(action 'cancel') save=(action 'save')}}
+  {{else}}
+{{/if}}
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <td >
+        id
+      </td>
+      <td >
+        Name
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each activityTypes as |type| }}
+  <tr onClick={{action 'edit' type}}>
+    <td>{{type.id}}</td>
+    <td>{{type.name}}</td>
+  </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+{{/box-widget}}

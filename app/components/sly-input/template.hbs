@@ -1,0 +1,18 @@
+{{#unless filtered}}
+  {{#if fieldDefinition.label}}
+  <div class="label">{{fieldDefinition.label}}
+    {{in-place-edit value=actualValue setFieldValue=(action 'setFieldValue') oldValue=oldValue}}</div>
+    <div class="pointer fa fa-chevron-down"></div>
+  {{else}}
+    <div class="pointer fa fa-chevron-down"></div>
+  {{/if}}
+  <div class="frame">
+    <ul class="slidee">
+      {{#each inputValues as |inputValue|}}
+      <li>
+        {{inputValue}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+  {{/unless}}

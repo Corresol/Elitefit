@@ -1,0 +1,12 @@
+{{#if goBack}}
+  <div class="actions left">
+    {{#link-to goBack}}{{fa-icon 'chevron-left'}}{{/link-to}}
+  </div>
+{{else}}
+  {{#if showMenuToggle}}
+    {{#side-menu-toggle}}
+      {{fa-icon icon='bars' class="bar"}}
+    {{/side-menu-toggle}}
+  {{/if}}
+{{/if}}
+{{yield}}

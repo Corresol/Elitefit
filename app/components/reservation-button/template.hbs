@@ -1,0 +1,22 @@
+{{#unless isLoading}}
+{{#if reserved}}
+  <button class="c-btn--secondary reserveren {{if inList "c-list--btn" "c-btn"}}" {{action "remove"}}>Afmelden</button>
+  {{#if inList}}
+    {{#link-to 'member.activity' activity.id class='c-list--btn c-btn--alt info' tagName="button"}}info{{/link-to}}
+  {{/if}}
+{{else}}
+  {{#if waiting}}
+  <button class="c-btn--primary reserveren {{if inList "c-list--btn" "c-btn"}}" {{action "waiting"}}>Wachtend</button>
+  {{else}}
+      <button class="c-btn--primary reserveren {{if inList "c-list--btn" "c-btn"}}" {{action "add"}}>
+      {{reservationText}}</button>
+  {{/if}}
+  {{#if inList}}
+    {{#link-to 'member.activity' activity.id class='c-list--btn c-btn--alt info' tagName="button"}}info{{/link-to}}
+  {{/if}}
+{{/if}}
+{{else}}
+  <div class="c-btn--empty">
+    <button class='mini-loader'></button>
+  </div>
+{{/unless}}

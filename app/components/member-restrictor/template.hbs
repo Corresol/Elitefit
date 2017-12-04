@@ -1,0 +1,45 @@
+<div class="member-activity-board">
+  <table>
+    <thead>
+  <th class="name-column"></th>
+  {{#each activities as |activityGroup|}}
+  <th>
+    <span>
+      {{activityGroup.name}}
+    </span>
+  </th>
+  {{/each}}
+  <th></th>
+  </thead>
+  <tbody>
+  {{#each members as |member|}}
+    <tr>
+      <td class='name-column'>
+        {{member.fullName}}
+        {{#if member.labels}}
+        <br>
+          {{#each member.userLabels as |label|}}
+          <div class="label">
+            {{label}}
+          </div>
+          {{/each}}
+        {{/if}}
+      </td>
+      {{#each activities as |activityGroup|}}
+      <td>
+        {{member-restrictor/member-activity-group activityGroup=activityGroup member=member}}
+      </td>
+      {{/each}}
+      <td>
+        {{#each member.errors as |error|}}
+        {{error.attribute}} {{error.message}}
+        {{/each}}
+        {{#if member.isSaving}}
+
+        {{/if}}
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+  </table>
+</div>

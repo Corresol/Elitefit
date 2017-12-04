@@ -1,0 +1,10 @@
+{{#ember-wormhole to="app-header"}}
+  {{#app-header}}Account{{/app-header}}
+{{/ember-wormhole}}
+{{#page-content}}
+<div class="registration row">
+  <center>
+    {{login-form registration=true goToReservations=(action "goToReservations")}}
+  </center>
+</div>
+{{/page-content}}

@@ -1,0 +1,50 @@
+<div class="c-result-box">
+  <div class="c-divider">
+    <h3 class="c-divider__title">{{measurement.title}}
+      {{#if isAdding}}
+      <i class="fa fa fa-times-circle" aria-hidden="true" onclick={{action 'toggleAdd' measurement.modelName}}></i>
+      {{else}}
+      <i class="fa fa fa-plus-circle" aria-hidden="true" onclick={{action 'toggleAdd' measurement.modelName}}></i>
+      {{/if}}
+    </h3>
+  </div>
+  {{#if isAdding}}
+  <div class="c-result-box__inputblock">
+    <div class="scrollbar">
+      <div class="handle"></div>
+    </div>
+    {{#each filteredFields as |field|}}
+
+    {{sly-input step=field.step
+        start=field.start
+        end=field.end
+        fieldDefinition=field
+        modelName=measurement.modelName
+        records=records
+        setFieldValue=(action 'setFieldValue')}}
+    {{/each}}
+    <div class="c-result-box__cta">
+      <div class="c-result-box__explain">
+        De waardes die u invoert, worden ook in uw gebruikersprofiel weergegeven.
+      </div>
+      <button class="c-btn c-btn--primary" disabled="{{unless allValid "disabled"}}"  {{action "addResult" measurement.modelName}}>Toevoegen</button>
+    </div>
+  </div>
+{{else}}
+  {{#if (eq measurement.type 'single')}}
+    <div>
+    {{#each filteredFields as |field|}}
+      <div class="c-sub-divider">
+        <h3 class="c-sub-divider__title">{{field.label}}</h3>
+      </div>
+      {{sly-result model=model modelName=measurement.modelName field=field single=true}}
+    {{/each}}
+  </div>
+  {{/if}}
+  {{#if (eq measurement.type 'sum')}}
+    <div>
+    {{sly-result model=model modelName=measurement.modelName fields=measurement.fields}}
+    </div>
+  {{/if}}
+{{/if}}
+</div>

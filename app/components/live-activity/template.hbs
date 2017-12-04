@@ -1,0 +1,29 @@
+<div class="col-md-2">
+  <strong>{{activity.name}}</strong><br>
+  {{moment-format activity.date 'dddd DD/MM'}}
+  <div class="product-description">
+    Reserved : <strong>{{reserved}} / {{activity.max_capacity}}</strong>
+  </div>
+</div>
+
+<div class="col-md-10">
+  <ul class="users-list">
+    {{#each activity.reservedUsers as |user|}}
+    <li>
+      <img src={{if user.profile_picture user.profile_picture "bb.jpg"}}>
+      <a class="users-list-name">
+        {{user.name}}
+      </a>
+    </li>
+    {{/each}}
+
+    {{#each spots as |spot|}}
+    <li>
+      <img src={{spot.picture}}>
+      <a class="users-list-name">
+        {{spot.name}}
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</div>

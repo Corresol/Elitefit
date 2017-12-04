@@ -1,0 +1,9 @@
+<ul class="slidee {{if fields 'spacy'}}">
+  {{#each data as |record|}}
+    <li>
+      <div class="measurement">{{record.total}}</div>
+      <div class="date">{{moment-format record.date 'DD/MM/YY'}}</div>
+    </li>
+  {{/each}}
+</ul>
+

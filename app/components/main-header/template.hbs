@@ -1,0 +1,66 @@
+{{#if session.isAuthenticated}}
+  {{#side-menu}}
+  <header class="navbar navbar-default">
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img ontap={{action 'browse'}} onclick={{action 'browse'}} src="{{if currentUser.user.profile_picture currentUser.user.profile_picture "default.jpg"}}" class="img-circle" alt="User Image">
+        {{avatar-uploader model=model accept="image/*" setPicture=(action 'setPicture') class='hidden'}}
+      </div>
+      <div class="pull-left info">
+        {{currentUser.user.username}}
+      </div>
+    </div>
+  </header>
+  <ul class="nav">
+    <li>
+      {{#side-menu-link-to "member.account"}}
+        {{#eft-item label='Account'}}
+          <i class="fa fa-user"></i>
+        {{/eft-item}}
+      {{/side-menu-link-to}}
+    </li>
+    <li>
+      {{#side-menu-link-to "member.reservations"}}
+      {{#eft-item label='Lesrooster'}}
+      <svg version="1.1" id="icon-lesrooster" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+      	 y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+      <style type="text/css">
+      	.st0{fill-rule:evenodd;clip-rule:evenodd;}
+      </style>
+      <path class="st0" d="M24,42.7C13.7,42.7,5.3,34.3,5.3,24S13.7,5.3,24,5.3S42.7,13.7,42.7,24S34.3,42.7,24,42.7z M24,0
+      	C10.7,0,0,10.7,0,24s10.7,24,24,24c13.3,0,24-10.7,24-24S37.3,0,24,0z M25.3,10.7h-4v16L34,34.3l2-3.3l-10.7-6.3V10.7z"/>
+      </svg>
+        {{/eft-item}}
+      {{/side-menu-link-to}}
+    </li>
+    <li>
+      {{#side-menu-link-to "member.results"}}
+        {{#eft-item label='Resultaten'}}
+          <img class='fa' src='./assets/icon-results.png'>
+        {{/eft-item}}
+      {{/side-menu-link-to}}
+    </li>
+    <li>
+      {{#eft-item label='Foto wijzigen' onclick=(action 'browse')}}
+        <a href="javascript:void(0)">
+          <i class="icon-eft-camera"></i>
+        </a>
+      {{/eft-item}}
+    </li>
+    <li>
+      {{#side-menu-link-to "member.about"}}
+        {{#eft-item label='About'}}
+          <i class="fa fa-info-circle"></i>
+        {{/eft-item}}
+      {{/side-menu-link-to}}
+    </li>
+    <li>
+      {{#eft-item label='Uitloggen' onclick=(action 'logout')}}
+        <a href="javascript:void(0)">
+          <i class="fa fa-power-off"></i>
+        </a>
+      {{/eft-item}}
+    </li>
+  </ul>
+  {{/side-menu}}
+{{/if}}

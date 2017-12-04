@@ -1,0 +1,34 @@
+{{#box-widget class="info direct-chat direct-chat-warning" title="Direct Chat" as |box|}}
+  {{#box.tools}}
+    <span class="label label-warning">{{conversation.messages.length}} meassages</span>
+    <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-widget="chat-pane-toggle" data-original-title="Contacts" aria-describedby="tooltip670450">
+      <i class="fa fa-users"></i>
+    </button>
+  {{/box.tools}}
+    <div class="direct-chat-messages" id='conversation-messages'>
+      {{#each conversation.messages as |message index|}}
+        {{message-content message=message conversationMessages=conversation.messages index=index}}
+      {{/each}}
+    </div>
+    <div class="direct-chat-contacts">
+      <ul class="contacts-list">
+        {{#each conversation.recipients as |recipient|}}
+          <li>
+            <a>
+              <img class="contacts-list-img" src="{{if recipient.profile_picture recipient.profile_picture "default.jpg"}}" alt="User Image">
+              <div class="contacts-list-info">
+                <span class="contacts-list-name">
+                  {{recipient.name}}
+                </span>
+              </div>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{#box.footer}}
+    {{input value=messageContent enter="sendMessage" class='form-control col-xs-3' placeholder='your message'}}
+  {{/box.footer}}
+{{/box-widget}}
+
+{{outlet}}

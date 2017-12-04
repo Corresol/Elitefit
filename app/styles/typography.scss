@@ -1,0 +1,111 @@
+
+@font-face {
+  font-family: robotoLight;
+  src: url('../fonts/roboto/light/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: robotoBold;
+  src: url('../fonts/roboto/bold/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: roboto;
+  src: url('../fonts/roboto/regular/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: bebasNeue;
+  src: url('../fonts/bebas_neue-webfont.woff2') format('woff2'),
+  url('../fonts/bebas_neue-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: bebasNeueBold;
+  src: url('../fonts/bebas_neue_bold-webfont.woff2') format('woff2'),
+  url('../fonts/bebas_neue_bold-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: helveticeNeueLightCondensed;
+  src: url('../fonts/HelveticaNeue.woff') format('woff'),
+  url('../fonts/HelveticaNeue.woff') format('woff');
+}
+
+@mixin font-size($font-size) {
+    font-size: $font-size;
+    font-size: ($font-size / $global-font-size) * 1rem;
+    line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size);
+}
+
+
+h1, h2, h3, h4, h5, h6,
+p {
+}
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+$baseline: strip-unit($global-line-height);
+
+html {
+    font-size: $global-font-size;
+    line-height: $global-line-height;
+    font-family: $base-font-family;
+    color: $base-text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h1 {
+    @include font-size($font-size-h1);
+}
+
+h2 {
+    @include font-size($font-size-h2);
+}
+
+h3 {
+    @include font-size($font-size-h3);
+}
+
+h4 {
+    @include font-size($font-size-h4);
+}
+
+h5 {
+    @include font-size($font-size-h5);
+}
+
+h6 {
+    @include font-size($font-size-h6);
+}
+
+a {
+    color: $color-link;
+
+    @if ($link-underlined == false) {
+        text-decoration: none;
+    }
+
+    &:hover {
+        color: $color-link-hover;
+
+        @if ($link-underlined-hover == false) {
+            text-decoration: none;
+        }
+
+        @if ($link-underlined-hover == true) {
+            text-decoration: underline;
+        }
+
+    }
+
+}
+
+.swal2-title {
+  font-family: bebasNeue;
+}

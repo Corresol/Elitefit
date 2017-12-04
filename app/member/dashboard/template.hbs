@@ -1,0 +1,19 @@
+  {{#ember-wormhole to="app-header"}}
+  {{#app-header}}
+    <img src='/assets/menu-logo.png' style="width: 70px;"/>
+  {{/app-header}}
+  {{/ember-wormhole}}
+  {{dashboard-general currentUser=currentUser}}
+
+  <div class="c-divider">
+    <h3 class="c-divider__title">Saldo op je polsband </h3>
+    {{fa-icon 'chevron-right' class="chevron-right"}}
+  </div>
+
+  <div class="c-divider">
+    <h3 class="c-divider__title">Reserveringen</h3>
+  </div>
+  {{dashboard-reservations}}
+  <div class="c-divider">
+    <h3 class="c-divider__title">Resultaten</h3>
+  </div>

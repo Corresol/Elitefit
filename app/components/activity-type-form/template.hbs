@@ -1,0 +1,14 @@
+{{#if activityType}}
+{{#box-widget class="primary" title="Activitytype details" as |box|}}
+  {{#form-for activityType as |f|}}
+    <div class='col-md-4'>
+      {{f.text-field "name"}}
+      {{searchable-select content=activities selected=activityType.activities optionLabelKey='longName' multiple=true prompt="Choose activities" on-change=(action "update")}}<br>
+    </div>
+  {{/form-for}}
+  {{#box.footer}}
+    <button class="btn btn-default pull-left" {{action "cancel"}}>Cancel</button>
+    <button class="btn btn-info pull-right" {{action "save"}}>Save</button>
+  {{/box.footer}}
+{{/box-widget}}
+{{/if}}

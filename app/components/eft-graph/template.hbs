@@ -1,0 +1,31 @@
+<svg class="progress" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                    width={{size}}
+                                    height={{size}}
+                                    viewBox={{_viewBox}}>
+  <circle class="primary"
+          fill="transparent"
+          cx={{_center}}
+          cy={{_center}}
+          r={{_radius}}
+          stroke-dasharray={{_circumference}}
+          style="stroke-dashoffset: 1;"
+          stroke-width={{strokeWidth}}
+          transform={{_transform}}>
+  </circle>
+  <circle class="base"
+          fill="transparent"
+          cx={{_center}}
+          cy={{_center}}
+          r={{_radius}}
+          style={{{_dashOffsetStyle}}}
+          stroke-dasharray={{_circumference}}
+          stroke-width={{strokeWidth}}
+          transform={{_transform}}>
+  </circle>
+</svg>
+<div class="circle-progress">
+  {{progress}}%
+</div>
+<div class="circle-title">
+  {{title}}
+</div>

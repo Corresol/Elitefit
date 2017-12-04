@@ -1,0 +1,42 @@
+.registration {
+  .center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .explain {
+    font-family: roboto;
+    color: #a1a2a3;
+    padding: 20px 0;
+    font-size: 0.9em;
+
+  }
+  .logo {
+    img {
+      margin-top: 3em;
+      width: 300px;
+      margin-bottom: 3em;
+    }
+  }
+
+  .alert {
+    margin-top: 1em;
+    width: 100%;
+    max-width: 16.5em;
+    border-radius: 0px;
+    font-family: roboto;
+    padding: 1em;
+
+    &.alert-danger {
+      background-color: #c0c0c0!important;
+      border-color: #c0c0c0!important;
+    }
+  }
+  label {
+    font-family: roboto;
+    font-size: 1em;
+    margin: 0 0 10px 0;
+    color: #e0e0e0;
+    display: block;
+  }
+}

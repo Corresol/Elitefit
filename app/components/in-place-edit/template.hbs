@@ -1,0 +1,5 @@
+{{#if showManualInput}}
+  {{input value=value change=(action 'setFieldValue') submit=(action 'setFieldValue') type='number' focusOut=(action 'done') }}
+{{else}}
+  {{value}}{{fa-icon icon='pencil'}}
+{{/if}}

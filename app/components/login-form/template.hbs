@@ -1,0 +1,38 @@
+<div class='row'>
+  <div class='col-md-12'>
+    {{#if registration}}
+    <br>
+      <div class="form-group">
+        <label>Kies hier je nieuwe gebruikersnaam</label>
+        {{ef-input value=username placeholder='Gebruikersnaam' class='form-control'}}
+      </div>
+
+      <div class="form-group">
+        <label>Kies hier je nieuwe wachtwoord</label>
+        {{ef-input value=password placeholder='Wachtwoord' class='form-control' type=passwordType}}
+        <span class="registrations-password--toggle" onclick={{action "togglePasswordType" bubbles=false}}>
+          {{#if showPassword}}
+            {{fa-icon 'eye' size=1}}
+          {{else}}
+            {{fa-icon 'eye-slash' size=1}}
+          {{/if}}
+        </span>
+      </div>
+
+      <div class="form-group">
+        <button class="form-control c-btn c-btn--primary c-btn--full" title="Inloggen en opslaan" onclick={{action "activate"}}>Opslaan</button>
+      </div>
+    {{error-display errorMessage=errorMessage}}
+    {{else}}
+    {{ef-logo}}
+    <form {{action 'authenticate' on='submit'}}>
+      {{ef-input value=identification placeholder='Gebruikersnaam' class='form-control'}}
+      {{ef-input value=password placeholder='Wachtwoord' class='form-control' type='password'}}
+
+      <button type="submit" class="form-control c-btn c-btn--primary c-btn--full">Inloggen</button>
+      {{#link-to "recover" (query-params recoveryAction='recover') class="link"}}Wachtwoord vergeten{{/link-to}}
+      {{error-display errorMessage=errorMessage}}
+    </form>
+    {{/if}}
+  </div>
+</div>

@@ -1,0 +1,57 @@
+{{#ember-wormhole to="app-header"}}
+  {{#app-header goBack="member.reservations"}}
+    <div class="actions right">
+      <a href="javascript:void(0)" {{action 'unsetFilter'}}>{{fa-icon 'undo'}}</a>
+      {{#link-to 'member.reservations'}}{{fa-icon 'check'}}{{/link-to}}
+    </div>
+    Filter ({{filtersCount}})
+  {{/app-header}}
+{{/ember-wormhole}}
+{{#ember-wormhole to="app-sub-header"}}
+  <div class="c-divider filter">
+    <h3 class="c-divider__title filter">Selecteer de filters die van toepassing zijn.</h3>
+  </div>
+{{/ember-wormhole}}
+
+<div class='filters'>
+  {{#each filters as |filter|}}
+    <a class='filter-item' {{action "toggleFilterItem" filter.key}}>
+      <div class='filter-label'>
+        {{filter.name}}
+        <div class='summary'>
+          {{#each filter.selected as |filter index|}}
+          {{unless (eq index 0) "|"}}
+          {{filter.name}}
+          {{else}}
+          <span class='label label-default'>Alle</span>
+          {{/each}}
+        </div>
+      </div>
+      <div class='filter-icon'>
+      {{#if filter.visible}}
+        {{fa-icon 'minus'}}
+      {{else}}
+        {{fa-icon 'plus'}}
+      {{/if}}
+      </div>
+
+    </a>
+    {{#if filter.visible}}
+    <div class='filter-options'>
+      {{#each filter.options as |option| }}
+      <a class='option' {{action "toggleFilterOption" filter option}}>
+        {{option.name}}
+        <div class='icon {{if option.selected 'selected'}}'>
+          {{#if option.selected}}
+            {{fa-icon 'check-square-o'}}
+          {{else}}
+            {{fa-icon 'square-o'}}
+          {{/if}}
+        </div>
+      </a>
+
+      {{/each}}
+    </div>
+    {{/if}}
+  {{/each}}
+</div>

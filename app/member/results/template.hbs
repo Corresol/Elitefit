@@ -1,0 +1,15 @@
+{{#ember-wormhole to="app-header"}}
+  {{#app-header}}RESULTATEN{{/app-header}}
+{{/ember-wormhole}}
+<div class="-overview attached">
+<div class="c-sub-header">
+  <h3 class="c-sub-header__title">
+    <div class="c-sub-header__date">
+      {{moment-format (now) 'dddd DD-MM-YYYY' interval=1000 locale='nl'}}
+    </div>
+  </h3>
+</div>
+{{#each measurements as |measurement|}}
+  {{measurement-box measurement=measurement model=model user=currentUser.user}}
+{{/each}}
+</div>

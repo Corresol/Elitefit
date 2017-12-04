@@ -1,0 +1,24 @@
+<div class='registration'>
+<table>
+  {{#each model as |activity| }}
+    <tr>
+      <td>
+        <div>
+          {{activity.name}}</div>
+      </td>
+      <td>
+        {{#each activity.reservedUsers as |user|}}
+          {{user.name}}
+        {{/each}}
+      </td>
+      <td>
+        {{activity.reservations.length}}
+      </td>
+      <td>
+        {{activity.max_capacity}}
+      </td>
+    </tr>
+  {{/each}}
+</table>
+</div>
+

@@ -1,0 +1,20 @@
+& {
+  .base {
+    stroke: white;
+  }
+  .primary {
+    stroke: grey;
+  }
+
+  .circle-progress {
+    z-index: 1000;
+    margin-top: -34px;
+    font-size: 16px;
+  }
+
+  .circle-title {
+    z-index: 1000;
+    margin-top: 33px;
+    font-size: 16px;
+  }
+}

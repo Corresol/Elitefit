@@ -1,0 +1,14 @@
+{
+  "name": "elitefit-member",
+  "dependencies": {
+    "twix": "^1.1.1",
+    "combodate": "^1.1.0",
+    "phoenix": "phoenixframework/phoenix#v1.2.0-rc.1",
+    "font-awesome": "~4.5.0",
+    "spin.js": "^2.3.2",
+    "jquery.floatThead": "floatThead#^1.4.5",
+    "sly": "^1.6.1",
+    "cropper": "^2.3.4",
+    "sweetalert2": "^6.1.0"
+  }
+}

@@ -1,0 +1,25 @@
+& {
+  .bar {
+    font-size: 25px;
+    margin: 10px;
+  }
+  height: 1.1em;
+
+  .multi {
+    position: absolute;
+    text-align: left;
+    margin-top: -.4em;
+    margin-left: 48px;
+    .main {
+      display: inline;
+      font-size: 20px;
+    }
+    .sub {
+      margin-top: 2px;
+      font-family: robotoLight;
+      font-size: 10px;
+      height: 13px;
+      color: #d1d2d3;
+    }
+  }
+}
